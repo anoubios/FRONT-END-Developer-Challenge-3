@@ -52,6 +52,7 @@
 .Preparation{
     background-color: hsl(330, 100%, 98%);
     padding: 10px 15px;
+    border-radius: 8px;
 
     margin-top: 0;
     margin-left: 20px;
@@ -205,7 +206,7 @@
     background-color: hsl(13, 79%, 89%);
     padding: 40px 20px;
     }
-    
+
     .Main {
         max-width: 736px;          /* Збільшуємо максимальну ширину для ПК */
         background-color: #ffffff; /* Робимо фон картки білим */
@@ -215,5 +216,9 @@
     
     .RecipeImage {
         border-radius: 16px; /* Заокруглюємо кути зображення */
+    }
+
+    .Preparation{
+        border-radius: 8px;
     }
 }
