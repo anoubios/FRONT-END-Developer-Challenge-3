@@ -1,0 +1,197 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url(fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Young-Serif';
+    src: url(fonts/young-serif/YoungSerif-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Main{
+    width: 100%;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+}
+
+.RecipeImage{
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+.RecipeTitle{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    padding: 20px;
+}
+.RecipeDescription{
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    font-family: 'Outfit', sans-serif;
+    color: hsl(30, 10%, 34%);
+    padding: 20px;
+    padding-top: 0;
+}
+
+.PreparationTitle{
+    color: hsl(332, 51%, 32%);
+}
+.Preparation{
+    background-color: hsl(330, 100%, 98%);
+    padding: 10px 15px;
+
+    margin-top: 0;
+    margin-left: 20px;
+    margin-right: 0;
+
+    margin-bottom: 10px;
+    margin-radius: 5px;
+
+    font-family: 'Outfit', sans-serif;
+}
+.PreparationTime{
+    position: relative;
+    padding-left: 48px; /* Відступ для тексту, щоб звільнити місце для маркера */
+    margin-bottom: 12px; /* Відстань між пунктами */
+    color: #5b5054; /* Темно-сірий/коричневий колір тексту */
+    font-size: 16px;
+    line-height: 1.5;
+    list-style: none;
+}
+.PreparationTime li::before {
+  content: "•";
+  color: #852e46; /* Колір маркера відповідає заголовку */
+  position: absolute;
+  left: 8px; /* Позиціюємо маркер зліва */
+  font-size: 24px; /* Розмір маркера */
+  line-height: 1; /* Вирівнювання по вертикалі відносно тексту */
+}
+.PreparationTime li:not(:last-child) {
+  margin-bottom: 0; /* Відстань між пунктами, крім останнього */
+}
+
+.Ingredients {
+    font-family: 'Outfit', sans-serif;
+}
+.IngredientsTitle {
+    color: hsl(14, 45%, 36%);
+    padding-left: 10px;
+}
+.IngredientsList {
+    list-style: none; /* Скидаємо стандартні маркери списку */
+    padding: 0; /* Скидаємо стандартні відступи списку */
+    margin: 0;
+}
+.IngredientsList li {
+    display: flex; /* Робимо кожен пункт гнучким контейнером */
+    align-items: center; /* Центруємо маркер по вертикалі відносно кількох рядків тексту */
+    margin-bottom: 12px; 
+    color: #5b5054; 
+    font-size: 16px;
+    line-height: 1.5;
+}
+.IngredientsList li::before {
+    content: "•";
+    color: #852e46; 
+    font-size: 24px; 
+    line-height: 1;
+    margin-right: 16px; /* Відступ від крапки до тексту */
+    padding-left: 10px;
+}
+
+.Instructions {
+    font-family: 'Outfit', sans-serif;
+}
+.InstructionsTitle {
+    color: hsl(14, 45%, 36%);
+    padding-left: 10px;
+}
+.InstructionsList {
+    padding-left: 24px; /* Даємо місце для цифр зліва */
+    margin: 0;
+}
+.InstructionsList li {
+    /* Видалили display: flex та align-items */
+    margin-bottom: 12px; 
+    color: #5b5054; 
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 8px; /* Невеликий відступ між цифрою і текстом */
+}
+
+/* Фарбуємо цифри окремо від тексту */
+.InstructionsList li::marker {
+    color: hsl(14, 45%, 36%); /* Ваш колір заголовка */
+    font-weight: bold; /* Можна зробити цифри жирними */
+}
+
+.HorizontalLine {
+    color: hsl(30, 54%, 90%);
+    margin: 30px;
+}
+
+/* Ваші попередні стилі для заголовка і тексту залишаємо без змін */
+.Nutrition {
+    font-family: 'Outfit', sans-serif;
+}
+.NutritionTitle {
+    color: hsl(14, 45%, 36%);
+    padding-left: 10px;
+}
+.NutritionDescription {
+    color: #5b5054;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 16px;
+}
+/* Нові стилі для ТАБЛИЦІ */
+.NutritionTable {
+    width: 100%;
+    border-collapse: collapse; /* Важливо! Дозволяє малювати лінії між рядками */
+}
+/* Додаємо відступи всередині кожної комірки */
+.NutritionTable td {
+    padding: 16px 50px; /* Верх/низ - 16px, право/ліво - 10px */
+}
+/* Створюємо лінію-роздільник для всіх рядків (<tr>) */
+.NutritionTable tr {
+    position: relative;
+    border-bottom: none; 
+}
+/* Створюємо власну лінію для всіх рядків, крім останнього */
+.NutritionTable tr:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    
+    /* ТУТ ОБРІЗАЄМО ЛІНІЮ */
+    left: 5%;  /* Відступ лінії зліва */
+    width: 90%; /* Ширина лінії (щоб не доходила до правого краю) */
+    
+    height: 1px; /* Товщина лінії */
+    background-color: #e4e4e4; /* Колір лінії */
+}
+/* Забираємо лінію у найостаннішого рядка, як ви і хотіли */
+.NutritionTable tr:last-child {
+    border-bottom: none;
+}
+/* Стилізуємо стовпчик із цифрами (значеннями) */
+.NutritionTable .value {
+    color: hsl(14, 45%, 36%);
+    font-weight: 700;
+}
+
+
